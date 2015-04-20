@@ -1,20 +1,21 @@
-
+* {
+  box-sizing: border-box;
+}
 .range {
   position : relative;
   width: 400px;
   height: 60px;
-  border: 1px solid black;
 }
 
 .thumb {
   position : absolute;
   width: 60px;
   height: 60px;
-  background-color: greenyellow;
+  background-color: #F24C27;
   top: 0;
   left: 0;
   z-index: 5;
-  opacity: 0.6;
+  cursor: pointer;
 }
 
 .track {
@@ -24,13 +25,13 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(33,33,33,0.5);
+  background: #5F5448;
 }
 
 .target  {
   position: absolute;
-  width: 150px;
-  height: 75px;
+  width: 100px;
+  height: 150px;
   background: gold;
   top: 50%;
   left: 50%;

@@ -86,7 +86,7 @@ var Range = (function ($) {
         var thisPoint = (mouse.x - offsetX);
         var value = (thisPoint - options.endPoint1) * intrinsicProportion + options.minValue;
 
-        var newWidth = value * rectTarget.width;
+        var newWidth = utils.clamp(value * rectTarget.width, rectTarget.width, rectTarget.width * options.maxValue);
         var newH =  newHeight(rectTarget.width,rectTarget.height,newWidth);
 
 
@@ -96,8 +96,8 @@ var Range = (function ($) {
         if (utils.pointInRect(mouse.x, mouse.y, rect)) {
             ui.thumb.css({'left': left});
             ui.target.css({
-                'width': newWidth,
-                'height' : newH
+                'width': parseInt(newWidth, 10),
+                'height' : parseInt(newH)
             });
         }
     }
